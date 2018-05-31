@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Altharsbuzhihuo.com/"/>
-  <updated>2018-05-31T12:25:42.092Z</updated>
+  <updated>2018-05-31T12:31:30.541Z</updated>
   <id>http://Altharsbuzhihuo.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://Altharsbuzhihuo.com/2018/05/31/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%EF%BC%88Java%E5%AE%9E%E7%8E%B0%EF%BC%89/"/>
     <id>http://Altharsbuzhihuo.com/2018/05/31/字符串模式匹配算法（Java实现）/</id>
     <published>2018-05-31T06:58:45.000Z</published>
-    <updated>2018-05-31T12:25:42.092Z</updated>
+    <updated>2018-05-31T12:31:30.541Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="1-BF算法"><a href="#1-BF算法" class="headerlink" title="1.BF算法"></a>1.BF算法</h1><p>暴风(Brute Force)算法，又叫朴素算法,是一种比较好理解的简单字符串匹配算法。它是一种带回溯的模式匹配算法，将目标串依次逐字与模式串比较，再将得到的匹配结果输出。</p><p><strong>代码如下：</strong></p><pre><code>public void searchAll(String str1,String str2){      int i=0,j=0;    int len1=str1.length();    int len2=str2.length();    //外层循环遍历目标字符串    for(i=0;i&lt;len1;i++){        //内层循环遍历模式串        for(j=0;j&lt;len2;j++){            //逐字比较是否一致，不一致则break结束内层循环            if(str1.charAt(i+j)!=str2.charAt(j))            {                break;            }            //打印得到的匹配结果            else if(j==len-1)            {                System.out.println(&quot;子串出现的位置为：&quot;+i);            }        }    }}</code></pre><p><strong>时间复杂度：</strong></p><blockquote><p>m=str1.length();<br>n=str2.length();</p></blockquote><blockquote><p>最好的情况：O(m)</p></blockquote><blockquote><p>最坏的情况：O(n(n-m+1)m)</p></blockquote><h1 id="2-KMP算法"><a href="#2-KMP算法" class="headerlink" title="2.KMP算法"></a>2.KMP算法</h1><p>还没写，以后再写</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="1-BF算法"><a href="#1-BF算法" class="headerlink" title="1.BF算法"></a>1.BF算法</h1><p>暴风(Brute Force)算法，又叫朴素算法,是一种比较好理解的简单字符串匹配算法。它是一种带回溯的模式匹配算法，将目标串依次逐字与模式串比较，再将得到的匹配结果输出。</p><p><strong>代码如下：</strong></p><pre><code>public void searchAll(String str1,String str2){      int i=0,j=0;    int len1=str1.length();    int len2=str2.length();    //外层循环遍历目标字符串    for(i=0;i&lt;len1;i++){        //内层循环遍历模式串        for(j=0;j&lt;len2;j++){            //逐字比较是否一致，不一致则break结束内层循环            if(str1.charAt(i+j)!=str2.charAt(j))            {                break;            }            //打印得到的匹配结果            else if(j==len-1)            {                System.out.println(&quot;子串出现的位置为：&quot;+i);            }        }    }}</code></pre><p><strong>时间复杂度：</strong></p><blockquote><p>m=str1.length();<br>n=str2.length();</p></blockquote><blockquote><p>最好的情况：O(m)<br>最坏的情况：O(n(n-m+1)m)</p></blockquote><h1 id="2-KMP算法"><a href="#2-KMP算法" class="headerlink" title="2.KMP算法"></a>2.KMP算法</h1><p>还没写，以后再写</p>]]></content>
     
     <summary type="html">
     
@@ -37,55 +37,15 @@
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="数据结构，模式匹配，BF算法，KMP算法，Java" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%EF%BC%8CBF%E7%AE%97%E6%B3%95%EF%BC%8CKMP%E7%AE%97%E6%B3%95%EF%BC%8CJava/"/>
+      <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-  </entry>
-  
-  <entry>
-    <title>测试博客</title>
-    <link href="http://Altharsbuzhihuo.com/2018/05/26/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://Altharsbuzhihuo.com/2018/05/26/测试博客/</id>
-    <published>2018-05-26T05:50:08.000Z</published>
-    <updated>2018-05-26T10:04:24.605Z</updated>
+      <category term="模式匹配" scheme="http://Altharsbuzhihuo.com/tags/%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/"/>
     
-    <content type="html"><![CDATA[<p>貌似标题没问题，我试试这个<br>插入链接</p><p>欢迎关注<a href="https://github.com/Altharsbuzhihuo/Altharsbuzhihuo.github.io" target="_blank" rel="noopener">我的博客</a></p>]]></content>
+      <category term="BF算法" scheme="http://Altharsbuzhihuo.com/tags/BF%E7%AE%97%E6%B3%95/"/>
     
-    <summary type="html">
+      <category term="KMP算法" scheme="http://Altharsbuzhihuo.com/tags/KMP%E7%AE%97%E6%B3%95/"/>
     
-      
-      
-        &lt;p&gt;貌似标题没问题，我试试这个&lt;br&gt;插入链接&lt;/p&gt;
-&lt;p&gt;欢迎关注&lt;a href=&quot;https://github.com/Altharsbuzhihuo/Altharsbuzhihuo.github.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;我的
-      
-    
-    </summary>
-    
-      <category term="搭建博客" scheme="http://Altharsbuzhihuo.com/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-      <category term="测试，hexo，github" scheme="http://Altharsbuzhihuo.com/tags/%E6%B5%8B%E8%AF%95%EF%BC%8Chexo%EF%BC%8Cgithub/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hello-world</title>
-    <link href="http://Altharsbuzhihuo.com/2018/05/26/hello-world/"/>
-    <id>http://Altharsbuzhihuo.com/2018/05/26/hello-world/</id>
-    <published>2018-05-26T05:45:19.000Z</published>
-    <updated>2018-05-26T05:58:04.499Z</updated>
-    
-    <content type="html"><![CDATA[<p>啥都没有</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;啥都没有&lt;/p&gt;
-
-      
-    
-    </summary>
-    
+      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
     
   </entry>
   
