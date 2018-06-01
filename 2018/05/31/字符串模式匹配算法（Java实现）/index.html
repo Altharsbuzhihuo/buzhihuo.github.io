@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="1.BF算法暴风(Brute Force)算法，又叫朴素算法,是一种比较好理解的简单字符串匹配算法。它是一种带回溯的模式匹配算法，将目标串依次逐字与模式串比较，再将得到的匹配结果输出。 代码如下：        public void searchAll(String str1,String str2){            int i=0,j=0;         int len1=str1.">
+<meta name="description" content="1.BF算法暴风(Brute Force)算法，又叫朴素算法,是一种比较好理解的简单字符串匹配算法。它是一种带回溯的模式匹配算法，将目标串依次逐字与模式串比较，再将得到的匹配结果输出。 代码如下： public void searchAll(String str1,String str2){        int i=0,j=0;     int len1=str1.length();     i">
 <meta name="keywords" content="数据结构,模式匹配,BF算法,KMP算法,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字符串模式匹配算法（Java实现）">
 <meta property="og:url" content="http://Altharsbuzhihuo.com/2018/05/31/字符串模式匹配算法（Java实现）/index.html">
 <meta property="og:site_name" content="Abuzhihuo&#39;s blog">
-<meta property="og:description" content="1.BF算法暴风(Brute Force)算法，又叫朴素算法,是一种比较好理解的简单字符串匹配算法。它是一种带回溯的模式匹配算法，将目标串依次逐字与模式串比较，再将得到的匹配结果输出。 代码如下：        public void searchAll(String str1,String str2){            int i=0,j=0;         int len1=str1.">
+<meta property="og:description" content="1.BF算法暴风(Brute Force)算法，又叫朴素算法,是一种比较好理解的简单字符串匹配算法。它是一种带回溯的模式匹配算法，将目标串依次逐字与模式串比较，再将得到的匹配结果输出。 代码如下： public void searchAll(String str1,String str2){        int i=0,j=0;     int len1=str1.length();     i">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-01T14:19:55.304Z">
+<meta property="og:updated_time" content="2018-06-01T14:42:25.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字符串模式匹配算法（Java实现）">
-<meta name="twitter:description" content="1.BF算法暴风(Brute Force)算法，又叫朴素算法,是一种比较好理解的简单字符串匹配算法。它是一种带回溯的模式匹配算法，将目标串依次逐字与模式串比较，再将得到的匹配结果输出。 代码如下：        public void searchAll(String str1,String str2){            int i=0,j=0;         int len1=str1.">
+<meta name="twitter:description" content="1.BF算法暴风(Brute Force)算法，又叫朴素算法,是一种比较好理解的简单字符串匹配算法。它是一种带回溯的模式匹配算法，将目标串依次逐字与模式串比较，再将得到的匹配结果输出。 代码如下： public void searchAll(String str1,String str2){        int i=0,j=0;     int len1=str1.length();     i">
 
 
 
@@ -372,25 +372,41 @@
       
         <h1 id="1-BF算法"><a href="#1-BF算法" class="headerlink" title="1.BF算法"></a>1.BF算法</h1><p>暴风(Brute Force)算法，又叫朴素算法,是一种比较好理解的简单字符串匹配算法。它是一种带回溯的模式匹配算法，将目标串依次逐字与模式串比较，再将得到的匹配结果输出。</p>
 <p><strong>代码如下：</strong></p>
-<pre class="prettyprint lang-javascript">  
-    public void searchAll(String str1,String str2){  
+<pre><code>public void searchAll(String str1,String str2){  
 
-        int i=0,j=0;
-        int len1=str1.length();
-        int len2=str2.length();
+    int i=0,j=0;
+    int len1=str1.length();
+    int len2=str2.length();
 
-        //外层循环遍历目标字符串
-        for(i=0;i<len1;i++){ 内层循环遍历模式串="" for(j="0;j<len2;j++){" 逐字比较是否一致，不一致则break结束内层循环="" if(str1.charat(i+j)!="str2.charAt(j))" {="" break;="" }="" 打印得到的匹配结果="" else="" if(j="=len-1)" system.out.println("子串出现的位置为："+i);="" <="" pre="">
+    //外层循环遍历目标字符串
+    for(i=0;i&lt;len1;i++){
 
-<p><strong>时间复杂度：</strong></p>
+        //内层循环遍历模式串
+        for(j=0;j&lt;len2;j++){
+
+            //逐字比较是否一致，不一致则break结束内层循环
+            if(str1.charAt(i+j)!=str2.charAt(j))
+            {
+                break;
+            }
+
+            //打印得到的匹配结果
+            else if(j==len-1)
+            {
+                System.out.println(&quot;子串出现的位置为：&quot;+i);
+            }
+        }
+    }
+}
+</code></pre><p><strong>时间复杂度：</strong></p>
 <blockquote>
 <p>m=str1.length();<br>n=str2.length();</p>
 </blockquote>
 <blockquote>
 <p>最好的情况：O(m)<br>最坏的情况：O(n(n-m+1)m)</p>
 </blockquote>
-<h1 id="2-KMP算法"><a href="#2-KMP算法" class="headerlink" title="2.KMP算法"></a>2.KMP算法</h1><p>还没写，以后再写</p>
-</len1;i++){></pre>
+<h1 id="2-KMP算法"><a href="#2-KMP算法" class="headerlink" title="2.KMP算法"></a>2.KMP算法</h1><p>有点复杂，还没写，以后再写</p>
+
       
     </div>
     
@@ -708,7 +724,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">| 全站共705字</span>
+  <span class="post-count">| 全站共851字</span>
 </div>
         
 <div class="busuanzi-count">

@@ -371,85 +371,99 @@
             <p>今天写了一下数据结构里三种比较基础简单的排序算法。</p>
 <h1 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h1><p>升序的话就是，两两依次比较，然后把大的数往后沉下去，第一次排序结束，最后一个最大的数优先排好，然后进行第二次比较，如果数组长度为n，那么一共要进行n次比较，每一次进行n-i-1趟比较。</p>
 <p><strong>代码如下：</strong></p>
-<pre class="prettyprint lang-javascript"> 
+<pre><code>public void bubbleSort(int[] arrays) {
+        int n=arrays.length;
+        int temp=0;
 
-    public void bubbleSort(int[] arrays) {
-            int n=arrays.length;
-            int temp=0;
+        for(int i=0;i&lt;n;i++) {
 
-            for(int i=0;i<n;i++) {="" for(int="" j="0;j<n-i-1;j++)" if(arrays[j]="">arrays[j+1]) {
-                        temp=arrays[j+1];
-                        arrays[j+1]=arrays[j];
-                        arrays[j]=temp;
-                    }
+            for(int j=0;j&lt;n-i-1;j++) {
+
+                if(arrays[j]&gt;arrays[j+1]) {
+                    temp=arrays[j+1];
+                    arrays[j+1]=arrays[j];
+                    arrays[j]=temp;
                 }
             }
+        }
 
-            //依次打印排序后得到的结果
-            System.out.print("冒泡排序结果如下：");
-            for(int i=0;i<n;i++) {="" system.out.print(arrays[i]+"="" ");="" }="" system.out.print("\n");="" <="" pre="">
+        //依次打印排序后得到的结果
+        System.out.print(&quot;冒泡排序结果如下：&quot;);
+        for(int i=0;i&lt;n;i++) {
+            System.out.print(arrays[i]+&quot; &quot;);
+        }
 
-
-<blockquote>
+        System.out.print(&quot;\n&quot;);
+    }
+</code></pre><blockquote>
 <p>时间复杂度:O（n^2)<br>空间复杂度:O（1）</p>
 </blockquote>
 <h1 id="2-选择排序"><a href="#2-选择排序" class="headerlink" title="2.选择排序"></a>2.选择排序</h1><p>同样也是升序，就是从数组下标0开始，依次比较，第一次比较出最小的数，和arrays[0]交换位置，然后依次类推，找出剩余最小的数，交换位置，如果数组长度为n，那么一共要进行n次比较，每一次比较n-i-1趟。</p>
 <p><strong>代码如下：</strong></p>
-<pre class="prettyprint lang-javascript">  
+<pre><code>public void selectSort(int[] arrays) {
+        int n=arrays.length;
+        int temp=0;
 
-    public void selectSort(int[] arrays) {
-            int n=arrays.length;
-            int temp=0;
+        for(int i=0;i&lt;n;i++) {
 
-            for(int i=0;i<n;i++) {="" for(int="" j="0;j<n-i-1;j++)" if(arrays[i]="">arrays[i+j+1]) {
+            for(int j=0;j&lt;n-i-1;j++) {
 
-                        temp=arrays[i];
-                        arrays[i]=arrays[i+j+1];
-                        arrays[i+j+1]=temp;
-                    }
+                if(arrays[i]&gt;arrays[i+j+1]) {
 
+                    temp=arrays[i];
+                    arrays[i]=arrays[i+j+1];
+                    arrays[i+j+1]=temp;
                 }
+
             }
+        }
 
-            //依次打印排序后得到的结果
-            System.out.print("选择排序结果如下：");
-            for(int i=0;i<n;i++) {="" system.out.print(arrays[i]+"="" ");="" }="" system.out.print("\n");="" <="" pre="">
+        //依次打印排序后得到的结果
+        System.out.print(&quot;选择排序结果如下：&quot;);
+        for(int i=0;i&lt;n;i++) {
+            System.out.print(arrays[i]+&quot; &quot;);
+        }
 
+        System.out.print(&quot;\n&quot;);
 
-<blockquote>
+    }
+</code></pre><blockquote>
 <p>时间复杂度:O（n^2)<br>空间复杂度:O（1）</p>
 </blockquote>
 <h1 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3.插入排序"></a>3.插入排序</h1><p>升序，假定一个数组从arrays[0]开始，然后往里面依次插入数，保证每次插入的数顺序都已经排好。每当要插入arrays[j]时，从已排好序的数组的下标最后一位开始扫描，如果arrays[j]之前还有比它大的数就交换位置。如果数组长度为n，一共要比较n次，一共比较0+1+2+…+n-1次。</p>
 <p><strong>代码如下：</strong></p>
-<pre class="prettyprint lang-javascript"> 
+<pre><code>public void insertSort(int[] arrays) {
 
-    public void insertSort(int[] arrays) {
+        int n=arrays.length;
+        int temp=0;
 
-            int n=arrays.length;
-            int temp=0;
+        for(int i=0;i&lt;n;i++) {
 
-            for(int i=0;i<n;i++) {="" for(int="" j="i;j">0;j--) {
+            for(int j=i;j&gt;0;j--) {
 
-                    if(arrays[j-1]>arrays[j]) {
+                if(arrays[j-1]&gt;arrays[j]) {
 
-                        temp=arrays[j-1];
-                        arrays[j-1]=arrays[j];
-                        arrays[j]=temp;
-                    }
-
+                    temp=arrays[j-1];
+                    arrays[j-1]=arrays[j];
+                    arrays[j]=temp;
                 }
+
             }
+        }
 
 
-            //依次打印排序后得到的结果
-            System.out.print("插入排序结果如下：");
-            for(int i=0;i<n;i++) {="" system.out.print(arrays[i]+"="" ");="" }="" system.out.print("\n");="" <="" pre="">
+        //依次打印排序后得到的结果
+        System.out.print(&quot;插入排序结果如下：&quot;);
+        for(int i=0;i&lt;n;i++) {
+            System.out.print(arrays[i]+&quot; &quot;);
+        }
 
-
-<blockquote>
+        System.out.print(&quot;\n&quot;);
+    }
+</code></pre><blockquote>
 <p>时间复杂度:O（n^2）<br>空间复杂度:O（1）</p>
 </blockquote>
-</n;i++)></n;i++)></pre></n;i++)></n;i++)></pre></n;i++)></n;i++)></pre>
+
           
         
       
@@ -595,25 +609,41 @@
           
             <h1 id="1-BF算法"><a href="#1-BF算法" class="headerlink" title="1.BF算法"></a>1.BF算法</h1><p>暴风(Brute Force)算法，又叫朴素算法,是一种比较好理解的简单字符串匹配算法。它是一种带回溯的模式匹配算法，将目标串依次逐字与模式串比较，再将得到的匹配结果输出。</p>
 <p><strong>代码如下：</strong></p>
-<pre class="prettyprint lang-javascript">  
-    public void searchAll(String str1,String str2){  
+<pre><code>public void searchAll(String str1,String str2){  
 
-        int i=0,j=0;
-        int len1=str1.length();
-        int len2=str2.length();
+    int i=0,j=0;
+    int len1=str1.length();
+    int len2=str2.length();
 
-        //外层循环遍历目标字符串
-        for(i=0;i<len1;i++){ 内层循环遍历模式串="" for(j="0;j<len2;j++){" 逐字比较是否一致，不一致则break结束内层循环="" if(str1.charat(i+j)!="str2.charAt(j))" {="" break;="" }="" 打印得到的匹配结果="" else="" if(j="=len-1)" system.out.println("子串出现的位置为："+i);="" <="" pre="">
+    //外层循环遍历目标字符串
+    for(i=0;i&lt;len1;i++){
 
-<p><strong>时间复杂度：</strong></p>
+        //内层循环遍历模式串
+        for(j=0;j&lt;len2;j++){
+
+            //逐字比较是否一致，不一致则break结束内层循环
+            if(str1.charAt(i+j)!=str2.charAt(j))
+            {
+                break;
+            }
+
+            //打印得到的匹配结果
+            else if(j==len-1)
+            {
+                System.out.println(&quot;子串出现的位置为：&quot;+i);
+            }
+        }
+    }
+}
+</code></pre><p><strong>时间复杂度：</strong></p>
 <blockquote>
 <p>m=str1.length();<br>n=str2.length();</p>
 </blockquote>
 <blockquote>
 <p>最好的情况：O(m)<br>最坏的情况：O(n(n-m+1)m)</p>
 </blockquote>
-<h1 id="2-KMP算法"><a href="#2-KMP算法" class="headerlink" title="2.KMP算法"></a>2.KMP算法</h1><p>还没写，以后再写</p>
-</len1;i++){></pre>
+<h1 id="2-KMP算法"><a href="#2-KMP算法" class="headerlink" title="2.KMP算法"></a>2.KMP算法</h1><p>有点复杂，还没写，以后再写</p>
+
           
         
       
@@ -808,7 +838,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">| 全站共705字</span>
+  <span class="post-count">| 全站共851字</span>
 </div>
         
 <div class="busuanzi-count">
