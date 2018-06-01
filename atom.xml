@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Altharsbuzhihuo.com/"/>
-  <updated>2018-05-31T12:31:30.541Z</updated>
+  <updated>2018-06-01T14:30:21.493Z</updated>
   <id>http://Altharsbuzhihuo.com/</id>
   
   <author>
@@ -17,13 +17,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>简单排序之冒泡排序、选择排序、插入排序（Java实现）</title>
+    <link href="http://Altharsbuzhihuo.com/2018/06/01/%E7%AE%80%E5%8D%95%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E3%80%81%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%88Java%E5%AE%9E%E7%8E%B0%EF%BC%89/"/>
+    <id>http://Altharsbuzhihuo.com/2018/06/01/简单排序之冒泡排序、选择排序、插入排序（Java实现）/</id>
+    <published>2018-06-01T12:28:23.000Z</published>
+    <updated>2018-06-01T14:30:21.493Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天写了一下数据结构里三种比较基础简单的排序算法。</p><h1 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h1><p>升序的话就是，两两依次比较，然后把大的数往后沉下去，第一次排序结束，最后一个最大的数优先排好，然后进行第二次比较，如果数组长度为n，那么一共要进行n次比较，每一次进行n-i-1趟比较。</p><p><strong>代码如下：</strong></p><pre class="prettyprint lang-javascript">     public void bubbleSort(int[] arrays) {            int n=arrays.length;            int temp=0;            for(int i=0;i<n;i++) {="" for(int="" j="0;j<n-i-1;j++)" if(arrays[j]="">arrays[j+1]) {                        temp=arrays[j+1];                        arrays[j+1]=arrays[j];                        arrays[j]=temp;                    }                }            }            //依次打印排序后得到的结果            System.out.print("冒泡排序结果如下：");            for(int i=0;i<n;i++) {="" system.out.print(arrays[i]+"="" ");="" }="" system.out.print("\n");="" <="" pre=""><blockquote><p>时间复杂度:O（n^2)<br>空间复杂度:O（1）</p></blockquote><h1 id="2-选择排序"><a href="#2-选择排序" class="headerlink" title="2.选择排序"></a>2.选择排序</h1><p>同样也是升序，就是从数组下标0开始，依次比较，第一次比较出最小的数，和arrays[0]交换位置，然后依次类推，找出剩余最小的数，交换位置，如果数组长度为n，那么一共要进行n次比较，每一次比较n-i-1趟。</p><p><strong>代码如下：</strong></p><pre class="prettyprint lang-javascript">      public void selectSort(int[] arrays) {            int n=arrays.length;            int temp=0;            for(int i=0;i<n;i++) {="" for(int="" j="0;j<n-i-1;j++)" if(arrays[i]="">arrays[i+j+1]) {                        temp=arrays[i];                        arrays[i]=arrays[i+j+1];                        arrays[i+j+1]=temp;                    }                }            }            //依次打印排序后得到的结果            System.out.print("选择排序结果如下：");            for(int i=0;i<n;i++) {="" system.out.print(arrays[i]+"="" ");="" }="" system.out.print("\n");="" <="" pre=""><blockquote><p>时间复杂度:O（n^2)<br>空间复杂度:O（1）</p></blockquote><h1 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3.插入排序"></a>3.插入排序</h1><p>升序，假定一个数组从arrays[0]开始，然后往里面依次插入数，保证每次插入的数顺序都已经排好。每当要插入arrays[j]时，从已排好序的数组的下标最后一位开始扫描，如果arrays[j]之前还有比它大的数就交换位置。如果数组长度为n，一共要比较n次，一共比较0+1+2+…+n-1次。</p><p><strong>代码如下：</strong></p><pre class="prettyprint lang-javascript">     public void insertSort(int[] arrays) {            int n=arrays.length;            int temp=0;            for(int i=0;i<n;i++) {="" for(int="" j="i;j">0;j--) {                    if(arrays[j-1]>arrays[j]) {                        temp=arrays[j-1];                        arrays[j-1]=arrays[j];                        arrays[j]=temp;                    }                }            }            //依次打印排序后得到的结果            System.out.print("插入排序结果如下：");            for(int i=0;i<n;i++) {="" system.out.print(arrays[i]+"="" ");="" }="" system.out.print("\n");="" <="" pre=""><blockquote><p>时间复杂度:O（n^2）<br>空间复杂度:O（1）</p></blockquote></n;i++)></n;i++)></pre></n;i++)></n;i++)></pre></n;i++)></n;i++)></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天写了一下数据结构里三种比较基础简单的排序算法。&lt;/p&gt;
+&lt;h1 id=&quot;1-冒泡排序&quot;&gt;&lt;a href=&quot;#1-冒泡排序&quot; class=&quot;headerlink&quot; title=&quot;1.冒泡排序&quot;&gt;&lt;/a&gt;1.冒泡排序&lt;/h1&gt;&lt;p&gt;升序的话就是，两两依次比较，然后把大的数往
+      
+    
+    </summary>
+    
+      <category term="数据结构" scheme="http://Altharsbuzhihuo.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
+    
+      <category term="冒泡排序" scheme="http://Altharsbuzhihuo.com/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="选择排序" scheme="http://Altharsbuzhihuo.com/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="插入排序" scheme="http://Altharsbuzhihuo.com/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>字符串模式匹配算法（Java实现）</title>
     <link href="http://Altharsbuzhihuo.com/2018/05/31/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%EF%BC%88Java%E5%AE%9E%E7%8E%B0%EF%BC%89/"/>
     <id>http://Altharsbuzhihuo.com/2018/05/31/字符串模式匹配算法（Java实现）/</id>
     <published>2018-05-31T06:58:45.000Z</published>
-    <updated>2018-05-31T12:31:30.541Z</updated>
+    <updated>2018-06-01T14:19:55.304Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="1-BF算法"><a href="#1-BF算法" class="headerlink" title="1.BF算法"></a>1.BF算法</h1><p>暴风(Brute Force)算法，又叫朴素算法,是一种比较好理解的简单字符串匹配算法。它是一种带回溯的模式匹配算法，将目标串依次逐字与模式串比较，再将得到的匹配结果输出。</p><p><strong>代码如下：</strong></p><pre><code>public void searchAll(String str1,String str2){      int i=0,j=0;    int len1=str1.length();    int len2=str2.length();    //外层循环遍历目标字符串    for(i=0;i&lt;len1;i++){        //内层循环遍历模式串        for(j=0;j&lt;len2;j++){            //逐字比较是否一致，不一致则break结束内层循环            if(str1.charAt(i+j)!=str2.charAt(j))            {                break;            }            //打印得到的匹配结果            else if(j==len-1)            {                System.out.println(&quot;子串出现的位置为：&quot;+i);            }        }    }}</code></pre><p><strong>时间复杂度：</strong></p><blockquote><p>m=str1.length();<br>n=str2.length();</p></blockquote><blockquote><p>最好的情况：O(m)<br>最坏的情况：O(n(n-m+1)m)</p></blockquote><h1 id="2-KMP算法"><a href="#2-KMP算法" class="headerlink" title="2.KMP算法"></a>2.KMP算法</h1><p>还没写，以后再写</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="1-BF算法"><a href="#1-BF算法" class="headerlink" title="1.BF算法"></a>1.BF算法</h1><p>暴风(Brute Force)算法，又叫朴素算法,是一种比较好理解的简单字符串匹配算法。它是一种带回溯的模式匹配算法，将目标串依次逐字与模式串比较，再将得到的匹配结果输出。</p><p><strong>代码如下：</strong></p><pre class="prettyprint lang-javascript">      public void searchAll(String str1,String str2){          int i=0,j=0;        int len1=str1.length();        int len2=str2.length();        //外层循环遍历目标字符串        for(i=0;i<len1;i++){ 内层循环遍历模式串="" for(j="0;j<len2;j++){" 逐字比较是否一致，不一致则break结束内层循环="" if(str1.charat(i+j)!="str2.charAt(j))" {="" break;="" }="" 打印得到的匹配结果="" else="" if(j="=len-1)" system.out.println("子串出现的位置为："+i);="" <="" pre=""><p><strong>时间复杂度：</strong></p><blockquote><p>m=str1.length();<br>n=str2.length();</p></blockquote><blockquote><p>最好的情况：O(m)<br>最坏的情况：O(n(n-m+1)m)</p></blockquote><h1 id="2-KMP算法"><a href="#2-KMP算法" class="headerlink" title="2.KMP算法"></a>2.KMP算法</h1><p>还没写，以后再写</p></len1;i++){></pre>]]></content>
     
     <summary type="html">
     
