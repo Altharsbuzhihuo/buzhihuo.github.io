@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Altharsbuzhihuo.com/"/>
-  <updated>2018-06-04T03:03:49.335Z</updated>
+  <updated>2018-06-06T11:58:13.530Z</updated>
   <id>http://Altharsbuzhihuo.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>快速排序（Java实现）</title>
+    <link href="http://Altharsbuzhihuo.com/2018/06/06/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88Java%E5%AE%9E%E7%8E%B0%EF%BC%89/"/>
+    <id>http://Altharsbuzhihuo.com/2018/06/06/快速排序（Java实现）/</id>
+    <published>2018-06-06T11:40:35.000Z</published>
+    <updated>2018-06-06T11:58:13.530Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p>1.选择一个基准数x为arrays[0]，先从最右往左开始查找比x小的第一个数，找到后与arrays[i]交换位置。<br>2.再从左往右开始查找比x大的第一个数，找到后再与arrays[j]交换位置。<br>3.然后再重复1，2步骤，直到将数组中的数以x为基准分好区，此时i=j，将基准数x归位到arrays[i],左边的数都比x小，右边的数都比x大。<br>4.以x为界形成两个子区间，然后分别进行递归，也就是重复以上步骤就排好了。</p><blockquote><p>时间复杂度：平均为O(nlogn),最好为O(nlogn)，最坏为O(n2)<br>空间复杂度：O(log₂n)</p></blockquote><pre class="prettyprit lang-javascript">        /**     * 快速排序     * @param arrays 被排序数组     * @param l 区间最左边的下标     * @param r 区间最右边的下标     */    public void quickSort(int[] arrays,int l,int r) {            if(l>r) {                return;            }            //给i赋值为区间最左下标，给j赋值为区间最右下标            int i=l,j=r,x=arrays[i];            //以基准数x为标准，对数组的数进行分区，直到i==j，循环结束            while(i<j) {="" 从右往左循环查找比基准数小的数arrays[j]，并填入arrays[i]中="" while(arrays[j]="">=x&&i<j)j--; if(i<j)="" {="" arrays[i++]="arrays[j];" }="" 从左往右循环查找比基准数大的数arrays[i]，并填入arrays[j]中="" while(arrays[i]<="x&&i<j)i++;" arrays[j--]="arrays[i];" 此时i="=j,将基准数x归位，使x左边的数都比x小，x右边的数都比x大" arrays[i]="x;" 进行递归，将左右分区继续排序="" if(l<i)quicksort(arrays,l,i-i);="" if(r="">i)quickSort(arrays,i+1,r);        }        /**         * 给quicSort传递参数，最左下标为0，最右下标为数组长度减1         * @param a 被排序数组         */        public void QuickSort(int[] a) {            quickSort(a,0,a.length-1);            //依次打印排序后得到的结果            System.out.print("快速排序结果如下：");            for(int i=0;i<a.length;i++) {="" system.out.print(a[i]+"="" ");="" }="" system.out.print("\n");="" <="" pre=""></a.length;i++)></j)j--;></j)></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot; class=&quot;headerlink&quot; title=&quot;快速排序&quot;&gt;&lt;/a&gt;快速排序&lt;/h1&gt;&lt;p&gt;1.选择一个基准数x为arrays[0]，先从最右往左开始查找比x小的第一个数，找到后与arrays[i]交换位置。&lt;br&gt;
+      
+    
+    </summary>
+    
+      <category term="数据结构" scheme="http://Altharsbuzhihuo.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="快速排序" scheme="http://Altharsbuzhihuo.com/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>简单排序之冒泡排序、选择排序、插入排序（Java实现）</title>
@@ -73,13 +102,13 @@
     
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
+      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
+    
       <category term="模式匹配" scheme="http://Altharsbuzhihuo.com/tags/%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/"/>
     
       <category term="BF算法" scheme="http://Altharsbuzhihuo.com/tags/BF%E7%AE%97%E6%B3%95/"/>
     
       <category term="KMP算法" scheme="http://Altharsbuzhihuo.com/tags/KMP%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
     
   </entry>
   
