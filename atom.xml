@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Altharsbuzhihuo.com/"/>
-  <updated>2018-06-06T13:45:22.904Z</updated>
+  <updated>2018-07-13T06:57:55.634Z</updated>
   <id>http://Altharsbuzhihuo.com/</id>
   
   <author>
@@ -15,6 +15,67 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二分歸并排序（Java實現）</title>
+    <link href="http://Altharsbuzhihuo.com/2018/07/13/%E4%BA%8C%E5%88%86%E6%AD%B8%E5%B9%B6%E6%8E%92%E5%BA%8F%EF%BC%88Java%E5%AF%A6%E7%8F%BE%EF%BC%89/"/>
+    <id>http://Altharsbuzhihuo.com/2018/07/13/二分歸并排序（Java實現）/</id>
+    <published>2018-07-13T06:49:07.000Z</published>
+    <updated>2018-07-13T06:57:55.634Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="二分歸并排序"><a href="#二分歸并排序" class="headerlink" title="二分歸并排序"></a>二分歸并排序</h1><p>  将数组从中切开分为一半，然后分区再继续划分子区间，直到分为只有两个元素比较或单个元素的无数个小区间。比较完各个分区两个元素大小之后，再将区间重新两两合并，合并过程中保持顺序由大到小排列。</p><blockquote><p>时间复杂度：O(log₂n)<br>空间复杂度：O(1)</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] arrays)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> low,mid,high,base;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;arrays.length;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            low=<span class="number">0</span>;</span><br><span class="line">            high=i-<span class="number">1</span>;</span><br><span class="line">            base=arrays[i];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span>(low&lt;=high) &#123;</span><br><span class="line">                </span><br><span class="line">                mid=(low+high)/<span class="number">2</span>;</span><br><span class="line">                <span class="keyword">if</span>(arrays[mid]&gt;base) &#123;</span><br><span class="line">                    low=mid+<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(arrays[mid]&lt;base) &#123;</span><br><span class="line">                    high=mid-<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i-<span class="number">1</span>;j&gt;=high+<span class="number">1</span>;j--) &#123;</span><br><span class="line">                arrays[j+<span class="number">1</span>]=arrays[j];</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            arrays[high+<span class="number">1</span>]=base;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//依次打印排序后得到的结果</span></span><br><span class="line">        System.out.print(<span class="string">"二分归并排序结果如下："</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arrays.length;i++) &#123;</span><br><span class="line">            System.out.print(arrays[i]+<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        System.out.print(<span class="string">"\n"</span>);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;二分歸并排序&quot;&gt;&lt;a href=&quot;#二分歸并排序&quot; class=&quot;headerlink&quot; title=&quot;二分歸并排序&quot;&gt;&lt;/a&gt;二分歸并排序&lt;/h1&gt;&lt;p&gt;  将数组从中切开分为一半，然后分区再继续划分子区间，直到分为只有两个元素比较或单个元素的无数个小区间。比较
+      
+    
+    </summary>
+    
+      <category term="数据结构" scheme="http://Altharsbuzhihuo.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="二分歸并排序" scheme="http://Altharsbuzhihuo.com/tags/%E4%BA%8C%E5%88%86%E6%AD%B8%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>堆排序（Java实现）</title>
+    <link href="http://Altharsbuzhihuo.com/2018/06/15/%E5%A0%86%E6%8E%92%E5%BA%8F%EF%BC%88Java%E5%AE%9E%E7%8E%B0%EF%BC%89/"/>
+    <id>http://Altharsbuzhihuo.com/2018/06/15/堆排序（Java实现）/</id>
+    <published>2018-06-15T00:46:37.000Z</published>
+    <updated>2018-07-13T06:42:34.492Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><blockquote><p>时间复杂度：(nlogn)<br>空间复杂度：空间复杂度：O(1)</p></blockquote><p>來不及解釋了，看代碼：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 重建堆（这里为最大堆）</span></span><br><span class="line"><span class="comment">     * 将数组处理为完全二叉树，使父结点&gt;左孩子&gt;右孩子</span></span><br><span class="line"><span class="comment">     * 自下而上调整二叉树结点位置，根节点为数组最大值</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arrays 被排序数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> n 数组长度</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> h 非叶结点下标i</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">CreateHeap</span><span class="params">(<span class="keyword">int</span>[] arrays,<span class="keyword">int</span> n,<span class="keyword">int</span> h)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//将非叶结点下标赋给i，定义叶子结点j</span></span><br><span class="line">        <span class="keyword">int</span> i=h;</span><br><span class="line">        <span class="keyword">int</span> j=<span class="number">2</span>*i+<span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//设置标志位flag为false</span></span><br><span class="line">        <span class="keyword">boolean</span> flag=<span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">int</span> temp=arrays[i];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//查找左右孩子最大结点并交换到父结点</span></span><br><span class="line">        <span class="keyword">while</span>(j&lt;n&amp;&amp;!flag)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//如果左孩子小于右孩子就j++指向右孩子</span></span><br><span class="line">            <span class="keyword">if</span>(j&lt;n-<span class="number">1</span>&amp;&amp;arrays[j]&lt;arrays[j+<span class="number">1</span>])j++;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//如果父结点大于右孩子，则flag=true，本次循环结束</span></span><br><span class="line">            <span class="keyword">if</span>(temp&gt;arrays[j]) &#123;</span><br><span class="line">                flag=<span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//否则将右孩子放入父结点</span></span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                arrays[i]=arrays[j];</span><br><span class="line">                i=j;</span><br><span class="line">                j=<span class="number">2</span>*i+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//给子结点放入原父结点的值</span></span><br><span class="line">        arrays[i]=temp;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 堆排序</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arrays</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">HeapSort</span><span class="params">(<span class="keyword">int</span>[] arrays)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">//n为数组下标最后一位</span></span><br><span class="line">        <span class="keyword">int</span> n=arrays.length-<span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> temp=<span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        initHeap(arrays);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//从小到大循环依次从堆中取出结点</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&gt;<span class="number">0</span>;i--) &#123;</span><br><span class="line">            temp=arrays[<span class="number">0</span>];</span><br><span class="line">            arrays[<span class="number">0</span>]=arrays[i];</span><br><span class="line">            arrays[i]=temp;</span><br><span class="line">            </span><br><span class="line">            CreateHeap(arrays,i,<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//依次打印排序后得到的结果</span></span><br><span class="line">        System.out.print(<span class="string">"堆排序结果如下："</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++) &#123;</span><br><span class="line">            System.out.print(arrays[i]+<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        System.out.print(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;堆排序&quot;&gt;&lt;a href=&quot;#堆排序&quot; class=&quot;headerlink&quot; title=&quot;堆排序&quot;&gt;&lt;/a&gt;堆排序&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;时间复杂度：(nlogn)&lt;br&gt;空间复杂度：空间复杂度：O(1)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;
+      
+    
+    </summary>
+    
+      <category term="数据结构" scheme="http://Altharsbuzhihuo.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
+    
+      <category term="堆排序" scheme="http://Altharsbuzhihuo.com/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>快速排序（Java实现）</title>
@@ -102,13 +163,13 @@
     
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
+      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
+    
       <category term="模式匹配" scheme="http://Altharsbuzhihuo.com/tags/%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/"/>
     
       <category term="BF算法" scheme="http://Altharsbuzhihuo.com/tags/BF%E7%AE%97%E6%B3%95/"/>
     
       <category term="KMP算法" scheme="http://Altharsbuzhihuo.com/tags/KMP%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
     
   </entry>
   
