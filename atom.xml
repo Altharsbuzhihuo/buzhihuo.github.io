@@ -39,9 +39,9 @@
     
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="二分歸并排序" scheme="http://Altharsbuzhihuo.com/tags/%E4%BA%8C%E5%88%86%E6%AD%B8%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
-    
       <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
+    
+      <category term="二分歸并排序" scheme="http://Altharsbuzhihuo.com/tags/%E4%BA%8C%E5%88%86%E6%AD%B8%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
@@ -163,13 +163,13 @@
     
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
-    
       <category term="模式匹配" scheme="http://Altharsbuzhihuo.com/tags/%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/"/>
     
       <category term="BF算法" scheme="http://Altharsbuzhihuo.com/tags/BF%E7%AE%97%E6%B3%95/"/>
     
       <category term="KMP算法" scheme="http://Altharsbuzhihuo.com/tags/KMP%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
     
   </entry>
   
