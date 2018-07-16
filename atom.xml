@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Altharsbuzhihuo.com/"/>
-  <updated>2018-07-13T06:57:55.634Z</updated>
+  <updated>2018-07-16T16:28:10.666Z</updated>
   <id>http://Altharsbuzhihuo.com/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://Altharsbuzhihuo.com/2018/07/17/test/"/>
+    <id>http://Altharsbuzhihuo.com/2018/07/17/test/</id>
+    <published>2018-07-16T16:20:54.000Z</published>
+    <updated>2018-07-16T16:28:10.666Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是一篇测试文章。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这是一篇测试文章。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>搭建个人博客，Hexo+Github</title>
+    <link href="http://Altharsbuzhihuo.com/2018/07/16/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo+Github/"/>
+    <id>http://Altharsbuzhihuo.com/2018/07/16/搭建个人博客，Hexo+Github/</id>
+    <published>2018-07-16T01:43:57.000Z</published>
+    <updated>2018-07-16T16:51:39.556Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="为什么要用Hexo-Github自建博客？"><a href="#为什么要用Hexo-Github自建博客？" class="headerlink" title="为什么要用Hexo+Github自建博客？"></a>为什么要用Hexo+Github自建博客？</h2><p>自己建的博客有完全的自主权，你可以自己做各种程序上的修改，完整的备份等等～<br>微软这么大的博客系统都可以一夜之间关掉，你还敢用吗？<br><del>当然是因为Hexo简单，开源，不要钱，可以为所欲为啊。</del></p><h2 id="什么是Hexo？"><a href="#什么是Hexo？" class="headerlink" title="什么是Hexo？"></a>什么是Hexo？</h2><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官方文档</a><br>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p><h2 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h2><p><strong>1.配置Github</strong><br>首先注册/登录Github，看不懂英语，用谷歌浏览器可以翻译网页。</p><blockquote><p><a href="https://github.com/" target="_blank" rel="noopener">github网址</a><br><em>记住自己的username和注册邮箱</em></p></blockquote><p>选择Create a new repository<a href="https://github.com/new" target="_blank" rel="noopener">新建一个仓库</a></p><p>Repository name（填自己的名字） </p><p>name.github.io(name与你的注册用户名一致,这个就是你博客的域名了)</p><blockquote><p>eg:我的域名是github.com/Altharsbuzhihuo，就填入Altharsbuzhihuo.github.io。成功后出现下面的画面:</p></blockquote><p><img src="/img/20180716161616.png" alt="gitbash"></p><p><strong>2.安装 Node.js</strong> </p><blockquote><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js安装地址</a></p></blockquote><p><strong>3.安装 Git</strong> </p><blockquote><p><a href="https://github.com/waylau/git-for-win" target="_blank" rel="noopener">Git安装地址</a><br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git教程</a></p></blockquote><p><strong>4.安装完成后,鼠标右键选择–&gt;Git Bash here</strong></p><p>  因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。<br>  <img src="/img/2018071600.png" alt="gitbash"></p><p><strong>5.安装Hexo</strong><br>使用cmd命令窗口输入如下命令：</p><blockquote><p>npm install -g hexo-cli</p></blockquote><p>等待下载，成功后输入 npm -v 会显示版本<br><img src="/img/20180717003625.png" alt=""></p><h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><p>在电脑F盘或者随意什么目录下新建文件test，进入test按住shift点击鼠标右键打开命令行窗口，输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure></p><p>等待下载成功提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start blogging with Hexo!</span><br></pre></td></tr></table></figure></p><p>因为初始化hexo之后source目录下自带一篇hello world文章, 所以直接执行下方命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#发布草稿，生成预览</span><br><span class="line">$ hexo g</span><br><span class="line">#启动本地服务器</span><br><span class="line">$ hexo s</span><br><span class="line">#提示信息</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure></p><p>访问 <a href="http://localhost:4000/，" target="_blank" rel="noopener">http://localhost:4000/，</a> 可以看到网站的初步样子。</p><p><img src="http://i.imgur.com/wk2ybMK.jpg" alt=""></p><p>重新打开CMD，输入：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;Github的注册邮箱地址&quot;</span><br></pre></td></tr></table></figure><p>一直Enter，得到信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Your public key has been saved in /c/Users/user/.ssh/id_rsa.pub.</span><br></pre></td></tr></table></figure></p><p>找到该文件，打开（sublime text），Ctrl + a复制里面的所有内容，然后进入Sign in to GitHub：<a href="https://github.com/settings/ssh" target="_blank" rel="noopener">https://github.com/settings/ssh</a></p><p>New SSH key ——Title：blog —— Key：输入刚才复制的—— Add SSH key</p><h1 id="设置博客"><a href="#设置博客" class="headerlink" title="设置博客"></a>设置博客</h1><p>在blog目录下，打开_config.yml文件，修改参数信息。</p><p><strong>每个参数后使用一个英文空格</strong></p><p><img src="/img/20180716173608.png" alt=""><br><img src="/img/20180716173742.png" alt=""></p><h1 id="发表文章"><a href="#发表文章" class="headerlink" title="发表文章"></a>发表文章</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 测试文章</span><br><span class="line">$ hexo new &quot;test&quot;</span><br><span class="line">INFO  Created: E:\Git\workspace\test\blog\source\_posts\test.md</span><br></pre></td></tr></table></figure><p>根据文件路径找到该文章，使用markdown编辑语法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: test</span><br><span class="line">date: 2018-07-17 00:20:54</span><br><span class="line">---</span><br><span class="line">这是一篇测试文章。</span><br></pre></td></tr></table></figure></p><p>保存，然后执行如下步骤：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">F:\test\blog</span><br><span class="line">$ hexo clean</span><br><span class="line">INFO  Deleted database.</span><br><span class="line">INFO  Deleted public folder.</span><br><span class="line"></span><br><span class="line">F:\test\blog</span><br><span class="line">$ hexo g</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Files loaded in 1.48 s</span><br><span class="line">#省略</span><br><span class="line">INFO  29 files generated in 4.27 s</span><br><span class="line"></span><br><span class="line">F:\test\blog</span><br><span class="line">$ hexo s</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure></p><p>这个时候，打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>  ，发现刚才的文章已经成功了<br><img src="/img/20180717002954.png" alt=""></p><p>最后一步，部署发布，执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">F:\test\blog</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p><h2 id="打开博客链接-https-Altharsbuzhihuo-github-io-就能看到发布了"><a href="#打开博客链接-https-Altharsbuzhihuo-github-io-就能看到发布了" class="headerlink" title="打开博客链接 https://Altharsbuzhihuo.github.io  就能看到发布了."></a>打开博客链接 <a href="https://Altharsbuzhihuo.github.io" target="_blank" rel="noopener">https://Altharsbuzhihuo.github.io</a>  就能看到发布了.</h2><p><strong>相关链接：</strong><a href="https://blog.csdn.net/qq_33699981/article/details/72716951" target="_blank" rel="noopener">Hexo的next主题个性化教程</a>  </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h1&gt;&lt;h2 id=&quot;为什么要用Hexo-Github自建博客？&quot;&gt;&lt;a href=&quot;#为什么要用Hexo-Github自建博客？&quot; c
+      
+    
+    </summary>
+    
+      <category term="搭建博客" scheme="http://Altharsbuzhihuo.com/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="搭建博客" scheme="http://Altharsbuzhihuo.com/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="Hexo" scheme="http://Altharsbuzhihuo.com/tags/Hexo/"/>
+    
+      <category term="Github" scheme="http://Altharsbuzhihuo.com/tags/Github/"/>
+    
+  </entry>
   
   <entry>
     <title>二分歸并排序（Java實現）</title>
@@ -39,9 +90,9 @@
     
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
-    
       <category term="二分歸并排序" scheme="http://Altharsbuzhihuo.com/tags/%E4%BA%8C%E5%88%86%E6%AD%B8%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
     
   </entry>
   
@@ -163,13 +214,13 @@
     
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
+      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
+    
       <category term="模式匹配" scheme="http://Altharsbuzhihuo.com/tags/%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/"/>
     
       <category term="BF算法" scheme="http://Altharsbuzhihuo.com/tags/BF%E7%AE%97%E6%B3%95/"/>
     
       <category term="KMP算法" scheme="http://Altharsbuzhihuo.com/tags/KMP%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
     
   </entry>
   
