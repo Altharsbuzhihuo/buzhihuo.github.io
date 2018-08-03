@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Altharsbuzhihuo.com/"/>
-  <updated>2018-07-29T12:56:18.079Z</updated>
+  <updated>2018-08-03T03:07:51.587Z</updated>
   <id>http://Altharsbuzhihuo.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JDBC</title>
+    <link href="http://Altharsbuzhihuo.com/2018/08/03/JDBC/"/>
+    <id>http://Altharsbuzhihuo.com/2018/08/03/JDBC/</id>
+    <published>2018-08-03T03:05:54.000Z</published>
+    <updated>2018-08-03T03:07:51.587Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JDBC-Java-DataBase-Connection-程序的创建步骤："><a href="#JDBC-Java-DataBase-Connection-程序的创建步骤：" class="headerlink" title="JDBC(Java DataBase Connection)程序的创建步骤："></a>JDBC(Java DataBase Connection)程序的创建步骤：</h1><h2 id="1-加载JDBC驱动程序"><a href="#1-加载JDBC驱动程序" class="headerlink" title="1.加载JDBC驱动程序"></a>1.加载JDBC驱动程序</h2><pre><code>Class.forName(com.mysql.jdbc.Driver)</code></pre><h2 id="2-提供JDBC连接的URL"><a href="#2-提供JDBC连接的URL" class="headerlink" title="2.提供JDBC连接的URL"></a>2.提供JDBC连接的URL</h2><pre><code>String url=&quot;jdbc:mysql://localhost:3306/db_shop&quot;;String username=&quot;root&quot;;String password=&quot;root&quot;;</code></pre><h2 id="3-创建数据库连接"><a href="#3-创建数据库连接" class="headerlink" title="3.创建数据库连接"></a>3.创建数据库连接</h2><pre><code>Connedtion conn=DriverManager.getConnection(url,username,password);</code></pre><h2 id="4-创建一个Statement"><a href="#4-创建一个Statement" class="headerlink" title="4.创建一个Statement"></a>4.创建一个Statement</h2><pre><code>Statement stmt=conn.createStatement();</code></pre><h2 id="5-执行SQL语句"><a href="#5-执行SQL语句" class="headerlink" title="5.执行SQL语句"></a>5.执行SQL语句</h2><pre><code>String sql=&quot;select * from user&quot;;ResultSet rs=stmt.executeQuery(sql);</code></pre><h2 id="6-处理结果"><a href="#6-处理结果" class="headerlink" title="6.处理结果"></a>6.处理结果</h2><pre><code>try{    int id=rs.getInt(&quot;id&quot;);    String name=rs.getString(&quot;username&quot;);    String psw=rs.getString(&quot;password&quot;);    }catch(ClassNotFoundException e){        e.printStackTrace();    }   </code></pre><h2 id="7-关闭JDBC对象"><a href="#7-关闭JDBC对象" class="headerlink" title="7.关闭JDBC对象"></a>7.关闭JDBC对象</h2><pre><code>try{    rs.close();    rs=null;    stmt.close();    stmt=null;    conn.close();    conn=null;}catch(SQLException e){    e.printStackTrace();}</code></pre><h1 id="完整的程序"><a href="#完整的程序" class="headerlink" title="完整的程序"></a>完整的程序</h1><pre><code>import java.mysql.*;public class JDBCExample01{    public static void main(String[] args) throws SQLException, ClassNotFoundException {    Class.forName(&quot;com.mysql.jdbc.Driver&quot;);    String url=&quot;jdbc:mysql://localhost:3306/db_shop&quot;;    String username=&quot;root&quot;;    String password=&quot;root&quot;;    Connection conn = DriverManager.getConnection(url, username, password);    Statement stmt=conn.createStatement();    String sql=&quot;select * from users&quot;;    ResultSet rs=stmt.executeQuery(sql);    System.out.println(rs.getString(&quot;id&quot;));    System.out.println(rs.getString(&quot;username&quot;));    System.out.println(rs.getString(&quot;password&quot;));    rs.close();    rs=null;    stmt.close();    stmt=null;    conn.close();    conn=null;    }}</code></pre><h1 id="使用prepareStatement类"><a href="#使用prepareStatement类" class="headerlink" title="使用prepareStatement类"></a>使用prepareStatement类</h1><pre><code>import java.sql.*;public class Example{    public void static main(String[] args) throw SQLException{        Class.forName(&quot;com.mysql.jdbc.Driver&quot;);        String url=&quot;jdbc:mysql://localhost:3306/db_shop&quot;;        String username=&quot;root&quot;;        String password=&quot;root&quot;;        conn=DriverManager.getConnection(url,username,password);        String sql=&quot;INSERT INTO user(name,password,email)&quot;+&quot;VALUE(?,?,?)&quot;;        preStmt=conn.PrepareStatement(sql);        preStmt=setString(1,&quot;zl&quot;);        preStmt=setString(2,&quot;12345&quot;);        preStmt=setString(3,&quot;zl@foxmain.com&quot;);        preStmt.executeUpdate();        preStmt.close();        preStmt=null;        conn.close();        conn=null;    }}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;JDBC-Java-DataBase-Connection-程序的创建步骤：&quot;&gt;&lt;a href=&quot;#JDBC-Java-DataBase-Connection-程序的创建步骤：&quot; class=&quot;headerlink&quot; title=&quot;JDBC(Java DataBa
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://Altharsbuzhihuo.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="笔记" scheme="http://Altharsbuzhihuo.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="javaweb" scheme="http://Altharsbuzhihuo.com/tags/javaweb/"/>
+    
+      <category term="JDBC" scheme="http://Altharsbuzhihuo.com/tags/JDBC/"/>
+    
+  </entry>
   
   <entry>
     <title>Jsp</title>
