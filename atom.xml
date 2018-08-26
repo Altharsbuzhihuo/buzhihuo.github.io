@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Altharsbuzhihuo.com/"/>
-  <updated>2018-08-19T11:51:47.459Z</updated>
+  <updated>2018-08-26T12:26:52.937Z</updated>
   <id>http://Altharsbuzhihuo.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>B-tree和B+tree</title>
+    <link href="http://Altharsbuzhihuo.com/2018/08/26/B-tree%E5%92%8CB-tree/"/>
+    <id>http://Altharsbuzhihuo.com/2018/08/26/B-tree和B-tree/</id>
+    <published>2018-08-26T12:12:22.000Z</published>
+    <updated>2018-08-26T12:26:52.937Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="B-tree"><a href="#B-tree" class="headerlink" title="B-tree"></a>B-tree</h3><p>B-tree( Balance tree )，也就是平衡树。 相对于二叉树而言，B-tree每个节点有多个分支，即多叉，所以又叫多路搜索树。这个数据结构一般用于数据库的索引，查找效率比较高。</p><p>B-tree结构的数据首先包含一个二元组[key,data]，key为记录的键值，对应表中的主键值，data为除主键外的数据；每个非终端节点（即非根节点和叶子节点）包含指向子树根节点的指针Pi ( i=1，2，3…n )。</p><p>m阶B-Tree满足以下条件：</p><p>1、每个节点最多拥有m个子树</p><p>2、根节点至少有2个子树</p><p>3、分支节点至少拥有m/2颗子树（除根节点和叶子节点外都是分支节点）</p><p>4、所有叶子节点都在同一层、每个节点最多可以有m-1个key，并且以升序排列</p><p><img src="\img\20160202204827368.png" alt="B-tree"></p><h3 id="B-tree-1"><a href="#B-tree-1" class="headerlink" title="B+tree"></a>B+tree</h3><p>与B-tree结构类似，B+tree是在B-tree基础上的一种优化，使其更适合实现外存储索引结构，InnoDB存储引擎就使用了B+tree算法处理索引结构。</p><p>B-tree的每个节点不仅包含数据的key值，还有data值。而每个节点的存储空间有限，如果data数据较大时将会导致每个节点（即一个页）能存储的key的数量很小，当存储数据量很大时会导致B-tree的深度较大，影响查询效率。</p><p>在B+Tree中，所有数据记录节点都是按照键值大小顺序存放在同一层的叶子节点上，而非叶子节点上只存储key值信息，这样可以大大加大每个节点存储的key值数量，降低B+Tree的高度。 </p><p>B+tree相对于B-tree的不同：</p><ol><li>非叶子节点只存储键值信息。</li><li>所有叶子节点之间都有一个链指针。</li><li>数据记录都存放在叶子节点中。</li></ol><p><img src="\img\20160202205105560.png" alt="B+tree"></p><p>通常在B+Tree上有两个头指针，一个指向根节点，另一个指向关键字最小的叶子节点，而且所有叶子节点（即数据节点）之间是一种链式环结构。因此可以对B+Tree进行两种查找运算：一种是对于主键的范围查找和分页查找，另一种是从根节点开始，进行随机查找。 </p><p>数据库中的B+Tree索引可以分为聚集索引（clustered index）和辅助索引（secondary index）。上面的B+Tree在数据库中的实现即为聚集索引，聚集索引的B+Tree中的叶子节点存放的是整张表的行记录数据。辅助索引与聚集索引的区别在于辅助索引的叶子节点并不包含行记录的全部数据，而是存储相应行数据的聚集索引键，即主键。当通过辅助索引来查询数据时，InnoDB存储引擎会遍历辅助索引找到主键，然后再通过主键在聚集索引中找到完整的行记录数据。 </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;B-tree&quot;&gt;&lt;a href=&quot;#B-tree&quot; class=&quot;headerlink&quot; title=&quot;B-tree&quot;&gt;&lt;/a&gt;B-tree&lt;/h3&gt;&lt;p&gt;B-tree( Balance tree )，也就是平衡树。 相对于二叉树而言，B-tree每个节点有多个分
+      
+    
+    </summary>
+    
+      <category term="数据结构" scheme="http://Altharsbuzhihuo.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="树" scheme="http://Altharsbuzhihuo.com/tags/%E6%A0%91/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL乐观锁悲观锁</title>
@@ -265,9 +292,9 @@
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
-    
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
     
       <category term="二分歸并排序" scheme="http://Altharsbuzhihuo.com/tags/%E4%BA%8C%E5%88%86%E6%AD%B8%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
     
@@ -297,9 +324,9 @@
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
-    
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
     
       <category term="堆排序" scheme="http://Altharsbuzhihuo.com/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/"/>
     
@@ -326,9 +353,9 @@
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
-    
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
     
       <category term="快速排序" scheme="http://Altharsbuzhihuo.com/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
     
@@ -356,9 +383,9 @@
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
-    
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
     
       <category term="冒泡排序" scheme="http://Altharsbuzhihuo.com/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/"/>
     
@@ -389,9 +416,9 @@
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
-    
       <category term="数据结构" scheme="http://Altharsbuzhihuo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="Java" scheme="http://Altharsbuzhihuo.com/tags/Java/"/>
     
       <category term="模式匹配" scheme="http://Altharsbuzhihuo.com/tags/%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/"/>
     
